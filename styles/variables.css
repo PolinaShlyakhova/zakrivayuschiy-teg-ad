@@ -7,4 +7,5 @@
     --inline-size-mobile: 100%;
     --block-size-desktop: 368px;
     --block-size-mobile: 327px;
+    --color-border: rgba(255, 255, 255, 1);
 }

@@ -75,8 +75,37 @@
 }
 
 .card__image {
+  position: relative;
+}
+
+.card__image img {
   display: block;
   inline-size: 100%;
+}
+
+.card__image-label {
+  position: absolute;
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  top: 25px;
+  right: 25px;
+  color: rgba(0, 0, 0, 1);
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  -webkit-text-stroke: 1px var(--color-border);
+  text-shadow: 0 var(--color-border), 
+              0 1px var(--color-border),
+              0 -1px var(--color-border), 
+              1px 0 var(--color-border);
+}
+
+@supports (-webkit-text-stroke: 1px var(--color-border)) or (text-stroke: 1px var(--color-border)) {
+  .card__image-label {
+    text-stroke: 1px var(--color-border);
+    -webkit-text-stroke: 1px var(--color-border);
+    text-shadow: none;
+  }
 }
 
 .card__description {
