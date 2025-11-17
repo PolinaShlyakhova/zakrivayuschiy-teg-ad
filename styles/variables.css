@@ -3,8 +3,8 @@
     --accent-font: 'PressStart2P-Regular';
     --weight-main-text: 400;
     --weight-title: 700;
-    --inline-size-header-desktop: 700px;
-    --inline-size-header-mobile: 100%;
-    --block-size-header-desktop: 368px;
-    --block-size-header-mobile: 327px;
+    --inline-size-desktop: 696px;
+    --inline-size-mobile: 100%;
+    --block-size-desktop: 368px;
+    --block-size-mobile: 327px;
 }
