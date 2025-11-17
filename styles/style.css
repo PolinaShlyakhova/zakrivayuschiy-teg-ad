@@ -16,3 +16,45 @@
   font-family: var(--main-font), sans-serif;
   font-variation-settings: 'wght' var(--weight-main-text);
 }
+
+/* header */
+
+.header {
+  inline-size: var(--inline-size-header-desktop);
+  min-block-size: var(--block-size-header-desktop);
+  border: 2px solid rgba(0, 0, 0, 1);
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__logo-title {
+  font-family: var(--accent-font), sans-serif;
+  font-size: 65px;
+  padding-bottom: 20px;
+}
+
+.header__logo-subtitle {
+  font-family: var(--accent-font), sans-serif;
+  font-size: 23px;
+  text-transform: uppercase;
+}
+
+@media (width < 700px) {
+  .header {
+    inline-size: var(--inline-size-header-mobile);
+    min-block-size: var(--block-size-header-mobile);
+    margin: 102px auto;
+  }
+
+  .header__logo-title {
+    font-size: 49px;
+    padding-bottom: 20px;
+  }
+
+  .header__logo-subtitle {
+    font-size: 14px;
+  }
+}
