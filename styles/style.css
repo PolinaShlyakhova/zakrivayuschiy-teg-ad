@@ -14,6 +14,10 @@
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
   font-variation-settings: 'wght' var(--weight-main-text);
+  background-image: var(--gradient-background);
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 /* header */
@@ -27,6 +31,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: var(--color-main);
 }
 
 .header__logo-title {
@@ -72,6 +77,7 @@
 .card__title {
   font-weight: var(--weight-title);
   border: 2px solid rgba(0, 0, 0, 1);
+  background-color: var(--color-main);
 }
 
 .card__image {
@@ -123,17 +129,17 @@
   color: rgba(0, 0, 0, 1);
   opacity: 0.5;
   mix-blend-mode: hard-light;
-  -webkit-text-stroke: 1px var(--color-border);
-  text-shadow: 0 var(--color-border), 
-              0 1px var(--color-border),
-              0 -1px var(--color-border), 
-              1px 0 var(--color-border);
+  -webkit-text-stroke: 1px var(--color-main);
+  text-shadow: 0 var(--color-main), 
+              0 1px var(--color-main),
+              0 -1px var(--color-main), 
+              1px 0 var(--color-main);
 }
 
-@supports (-webkit-text-stroke: 1px var(--color-border)) or (text-stroke: 1px var(--color-border)) {
+@supports (-webkit-text-stroke: 1px var(--color-main)) or (text-stroke: 1px var(--color-main)) {
   .card__image-label {
-    text-stroke: 1px var(--color-border);
-    -webkit-text-stroke: 1px var(--color-border);
+    text-stroke: 1px var(--color-main);
+    -webkit-text-stroke: 1px var(--color-main);
     text-shadow: none;
   }
 }
@@ -143,6 +149,7 @@
   border: 2px solid rgba(0, 0, 0, 1);
   padding: 25px;
   gap: 25px;
+  background-color: var(--color-main);
 }
 
 .card__description-text {
@@ -182,7 +189,7 @@
   inline-size: 335px;
   block-size: 55px;
   margin: 0 auto 100px;
-  background-color: transparent;
+  background-color: var(--color-main);
   font-family: var(--accent-font);
   font-size: 14px;
   border: 2px solid rgba(0, 0, 0, 1);
@@ -199,6 +206,8 @@
     justify-content: center;
   }
 }
+
+/* dialog */
 
 .dialog {
   inline-size: 353px;
