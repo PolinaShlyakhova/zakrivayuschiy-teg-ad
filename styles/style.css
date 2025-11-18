@@ -76,11 +76,41 @@
 
 .card__image {
   position: relative;
+  border: 2px solid rgba(0, 0, 0, 1);
 }
 
 .card__image img {
   display: block;
   inline-size: 100%;
+}
+
+.card__image-grayscale {
+  filter: grayscale(75%);
+}
+
+.card__image-saturate {
+  filter: saturate(400%);
+}
+
+.card__image-hue-rotate {
+  filter: hue-rotate(30deg);
+}
+
+.card__image-invert {
+  filter: invert(90%);
+}
+
+.card__image-sepia {
+  filter: sepia(90%);
+}
+
+.card__image-blur {
+  filter: blur(10px);
+  transform: scale(0.98);
+}
+
+.card__image-hue-rotate-opacity {
+  filter: hue-rotate(100deg) opacity(70%);
 }
 
 .card__image-label {
