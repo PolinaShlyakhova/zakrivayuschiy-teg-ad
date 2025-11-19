@@ -40,6 +40,7 @@
 .button {
   position: relative;
   overflow: hidden;
+  outline: none;
 }
 
 .button:focus {
