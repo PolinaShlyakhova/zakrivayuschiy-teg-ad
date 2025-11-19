@@ -171,11 +171,12 @@
 
 .like-icon:focus {
   outline: none; 
-}
-
-.like-icon:focus {
   border: 2px solid var(--color-accent);
   transition: border 0.3s ease;
+}
+
+.sparks {
+  opacity: 0;
 }
 
 .card__like-button {
