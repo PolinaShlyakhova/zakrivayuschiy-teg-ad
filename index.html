@@ -395,5 +395,18 @@
       </dialog>
     </main>
     <script src="./scripts/like.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const saveButton = document.getElementById('save-button');
+        const dialog = document.getElementById('dialog-save');
+        
+        if (saveButton && dialog) {
+          saveButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            dialog.showModal();
+          });
+        }
+      });
+    </script>
   </body>
 </html>
