@@ -78,42 +78,42 @@
 
 /* like-icon */
   
-.like-icon {
+.card__icon-button {
   background-color: transparent;
   border: 2px solid var(--color-main);
 }
 
-.like-icon:focus {
+.card__icon-button:focus {
   outline: none;
   border: 2px solid var(--color-accent);
   transition: border 0.3s ease;
 }
 
-.like-icon .core {
+.core {
   fill: transparent;
   transition: fill 0.3s ease 0.03s; /* Задержка при уходе */
 }
 
-.like-icon .main-body {
+.main-body {
   fill: transparent;
   transition: fill 0.3s ease 0s; /* Без задержки при уходе */
 }
 
-.like-icon:hover .core {
+.card__icon-button:hover .core {
   fill: var(--color-accent);
   transition: fill 0.3s ease 0s;
 }
 
-.like-icon:hover .main-body {
+.card__icon-button:hover .main-body {
   fill: var(--color-accent);
   transition: fill 0.3s ease 0.05s;
 }
 
-.like-icon:active .core {
+.card__icon-button:active .core {
   fill: var(--animation-fill-color);
 }
 
-.like-icon:active .main-body {
+.card__icon-button:active .main-body {
   fill: var(--animation-fill-color);
 }
 
