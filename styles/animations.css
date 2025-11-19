@@ -1,11 +1,154 @@
-/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
+@keyframes heart-scale {
+    0% {
+      transform: scale(1);
+      transform-origin: center;
+    }
+  
+    50% {
+      transform: scale(1.05);
+      transform-origin: center;
+    }
+  
+    100% {
+      transform: scale(1);
+      transform-origin: center;
+    }
+  }
+  
+@keyframes spark-appear {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+      transform-origin: center;
+    }
+  
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+      transform-origin: center;
+    }
+  
+    100% {
+      opacity: 0;
+      transform: scale(0);
+      transform-origin: center;
+    }
+}
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+/* button */
 
-*/
+.button {
+  position: relative;
+  overflow: hidden;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--color-accent);
+  transition: box-shadow 0.3s ease;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button__text {
+  color: var(--color-main);
+  mix-blend-mode: difference;
+}
+
+.button__save-image {
+  filter: invert(1);
+  mix-blend-mode: difference;
+}
+
+/* like-icon */
+  
+.like-icon {
+  background-color: transparent;
+  border: 2px solid var(--color-main);
+}
+
+.like-icon:focus {
+  outline: none;
+  border: 2px solid var(--color-accent);
+  transition: border 0.3s ease;
+}
+
+.like-icon .core {
+  fill: transparent;
+  transition: fill 0.3s ease 0.03s; /* Задержка при уходе */
+}
+
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s ease 0s; /* Без задержки при уходе */
+}
+
+.like-icon:hover .core {
+  fill: var(--color-accent);
+  transition: fill 0.3s ease 0s;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--color-accent);
+  transition: fill 0.3s ease 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s ease 0.12s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s ease 0s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s ease 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart-scale 0.3s ease-in 0.1s 1 normal forwards;
+}
+
+.like-icon.is-liked .sparks {
+  animation: spark-appear 0.3s ease-in 0.3s 1 normal forwards;
+}
+
+.like-icon:not(.is-liked) .core {
+  fill: transparent;
+  transition: fill 0.1s linear 0s;
+}
+
+.like-icon:not(.is-liked) .main-body {
+  fill: transparent;
+  transition: fill 0.1s linear 0s;
+}
+
+.sparks {
+  opacity: 0;
+}
