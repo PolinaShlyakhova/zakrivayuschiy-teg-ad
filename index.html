@@ -381,31 +381,37 @@
       </button>
 
       <dialog class="dialog" id="dialog-save">
-        <form method="dialog">
-          <div class="dialog__save">
-            <div>
-              <svg viewbox="0 0 39 39" width="39" height="39" fill="none">
-                <use href="./svg/floppy.svg"/>
-              </svg>
-            </div>
-            <span>Вставьте дискету, чтобы продолжить</span>
+        <div class="dialog__save">
+          <div>
+            <svg viewbox="0 0 39 39" width="39" height="39" fill="none">
+              <use href="./svg/floppy.svg"/>
+            </svg>
           </div>
-          <button type="submit" class="button dialog__button">
-            <span class="button__text">ок</span>
-          </button>
-        </form>
-      </dialog>
+          <span>Вставьте дискету, чтобы продолжить</span>
+        </div>
+        <button type="button" class="button dialog__button" id="close-dialog">
+          <span class="button__text">ок</span>
+        </button>
+      </dialog>      
     </main>
     <script src="./scripts/like.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const saveButton = document.getElementById('save-button');
+        const closeButton = document.getElementById('close-dialog');
         const dialog = document.getElementById('dialog-save');
         
-        if (saveButton && dialog) {
+        if (saveButton) {
           saveButton.addEventListener('click', function(e) {
             e.preventDefault();
-            dialog.showModal();
+            if (dialog) dialog.showModal();
+          });
+        }
+        
+        if (closeButton) {
+          closeButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (dialog) dialog.close();
           });
         }
       });
